@@ -58,7 +58,20 @@ According to the numerical results, it seems as though the people with a Light H
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+```{r}
+model1 <- aov(WORDSUM~DEGREE,data=mydata)
+summary.aov(model1)
+```
 
+The p-value 0.000236 is too small for us to think that there is no difference between any of the categories. 
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 15.7, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+According to these confidence intervals, the data of the High School and Graduate Degrees are significantly different, as well as Light High Schooland Graduate Degrees are also significantly different. 
 
 # Discussion and Conclusion
 
