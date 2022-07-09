@@ -44,11 +44,16 @@ basicCN <- ggplot(mydata,aes(x=DEGREE,y=WORDSUM))
 basicCN + geom_boxplot()
 ```
 
-According to the geom boxplot, it appears as though the people with a graduate level degree did significantly better on the Wordsum test that the people in the other categories. On the other hand, the people who have a Light High School level degree had significantly worse degrees than the other people in the sample. 
+According to the geom boxplot, it appears as though the people with a graduate level degree did significantly better on the Wordsum test that the people in the other categories. On the other hand, the people who have a Light High School level degree had significantly worse degrees than the other people in the sample. The outliers show a range of people who have a light high school degree who scored similar to the people with a gradute degree and vice versa. 
 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+```{r}
+favstats(WORDSUM~DEGREE,data=mydata)
+```
+
+According to the numerical results, it seems as though the people with a Light High School degree have similar results to the results of the people that have a High School degree. While the people with a Graduate degree outranked the other people. However, the population of each degree is very different from one another. 
 
 ## Inferential Results
 
